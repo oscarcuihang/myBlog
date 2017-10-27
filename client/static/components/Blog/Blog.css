@@ -1,0 +1,20 @@
+.blog{
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #f6f6f6;
+}
+.blogList{
+    margin: 60px auto;
+    text-align: center;
+}
+.blogItem{
+    cursor: pointer;
+    text-align: left;
+    width: 50%;
+    height: 100px;
+    background-color: #fff;
+    border:1px solid #f1f1f1;
+    margin: 30px auto;
+    line-height: 100px;
+    padding-left: 20px;
+}
