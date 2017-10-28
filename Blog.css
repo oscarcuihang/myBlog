@@ -15,9 +15,6 @@
     background-color: #fff;
     border:1px solid #f1f1f1;
     margin: 30px auto;
+    line-height: 100px;
     padding-left: 20px;
-}
-.readBlog{
-    float: right;
-    margin-right: 20px;
 }

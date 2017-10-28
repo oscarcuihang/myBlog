@@ -1,0 +1,30 @@
+.article{
+    background-color: #f6f6f6;
+    min-height: 100vh;
+}
+.articleContent{
+    margin: 80px auto;
+    width: 50%;
+    text-align: center;
+    background-color: #fff;
+    border:1px solid #f1f1f1;
+    padding: 0px 20px 50px;
+}
+.articleTitle{
+    font-size: 24px;
+    font-weight: 400;
+    color: #555;
+}
+.articleTime{
+    color: #999;
+    font-size: 12px;
+}
+.articleText{
+    width: 100%;
+    text-indent: 2em;
+    text-align: left;
+     word-wrap: break-word;
+     letter-spacing: 1.5px;
+     line-height: 25px;
+     color:#555;
+}

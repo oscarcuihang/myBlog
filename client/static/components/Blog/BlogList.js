@@ -1,8 +1,31 @@
 import React,{Component} from 'react';
 import {render} from 'react-dom';
+import $ from 'jquery';
 import BlogItem from './BlogItem.js';
 
 class BlogList extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            blogData:[]
+        };
+    }
+
+    componentDidMount(){
+        $.ajax({
+            url: '/blog',
+            type: 'get',
+            dataType: 'json',
+            success:(data)=>{
+                console.log(data);
+                if(data.status == 1){
+                    this.setState({
+                        blogData:data.data
+                    })
+                }
+            }
+        })
+    }
 
     render(){
         return(
@@ -10,10 +33,13 @@ class BlogList extends Component{
                 <div className="blogList-title">
                     <h1>Blog</h1>
                 </div>
-                <BlogItem />
-                <BlogItem />
-                <BlogItem />
-                <BlogItem />
+                <div className="blogList-content">
+                    {
+                        this.state.blogData.map((count,i)=>{
+                            return <BlogItem key={i} title={count.title} time={count.time} id={count._id} />
+                        })
+                    }
+                </div>
             </div>
         );
     }
