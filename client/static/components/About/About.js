@@ -8,7 +8,9 @@ class About extends Component{
         return(
             <div className="about">
                 <Header />
-                
+                <div className="aboutContent">
+                    
+                </div>
             </div>
         );
     }

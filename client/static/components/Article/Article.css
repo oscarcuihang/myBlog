@@ -3,7 +3,7 @@
     min-height: 100vh;
 }
 .articleContent{
-    margin: 80px auto;
+    margin: 80px auto 40px;
     width: 50%;
     text-align: center;
     background-color: #fff;
@@ -27,4 +27,33 @@
      letter-spacing: 1.5px;
      line-height: 25px;
      color:#555;
+}
+.comment{
+    width: 50%;
+    margin: 0 auto;
+}
+.commentEdit{
+    background-color: #f1f1f1;
+    width: 100%;
+    margin-bottom: 30px;
+    border:2px solid #DEDEDE;
+    padding: 10px;
+    padding-bottom: 0;
+}
+.author{
+    width: 30%;
+}
+.commentItem{
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+    margin: 0 auto;
+}
+.btn{
+    float: right;
+}
+.commentItem-time{
+    float: right;
 }

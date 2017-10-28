@@ -53,7 +53,7 @@ router.post('/',(req,res,next)=>{
     newArticle.save();
     res.json({
         'status':1,
-        'message':'保存成功',
+        'message':'保存成功'
     });
 })
 

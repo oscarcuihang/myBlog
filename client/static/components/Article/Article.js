@@ -2,15 +2,17 @@ import React,{Component} from 'react';
 import {render} from 'react-dom';
 import $ from 'jquery';
 import Header from '../Header/Header.js';
+import Comment from './Comment'
 import './Article.css';
 
-class Articel extends Component{
+class Article extends Component{
     constructor(props){
         super(props);
         this.state = {
             title:'',
             text:'',
             time:'',
+            articleId: this.props.params.id
         };
     }
 
@@ -20,13 +22,13 @@ class Articel extends Component{
             typr: 'get',
             dataType: 'json',
             success: (data)=>{
-                console.log(data);
-                this.setState({
-                    title: data.data.title,
-                    text: data.data.text,
-                    time: data.data.time.createAt
-                })
-                console.log(this.state)
+                if(data.status == 1){
+                    this.setState({
+                        title: data.data.title,
+                        text: data.data.text,
+                        time: data.data.time.createAt
+                    })
+                }
             }
         })
     }
@@ -44,10 +46,11 @@ class Articel extends Component{
                         {this.state.text}
                     </div>
                 </div>
+                <Comment articleId={this.state.articleId} />
             </div>
         );
     }
 
 }
 
-export default Articel;
+export default Article;

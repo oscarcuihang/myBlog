@@ -8,6 +8,7 @@ var ejs = require('ejs');
 
 var index = require('./server/routes/index');
 var blog = require('./server/routes/blog');
+var comment = require('./server/routes/comment');
 
 var app = express();
 
@@ -28,7 +29,7 @@ app.get('/',function(req,res){
     res.render('index.html');
 });
 app.use('/blog',blog);
-
+app.use('/comment',comment);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
