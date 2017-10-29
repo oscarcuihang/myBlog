@@ -1,0 +1,29 @@
+.sidebar{
+    float: left;
+    position: fixed;
+    left:0;
+    width: 250px;
+    padding-top: 28px;
+    background-color: #f6f6f6;
+    margin-top: 50px;
+    overflow: hidden;
+    min-height: calc(100vh - 50px);
+}
+.side > li > a:focus, .side > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.navbar-collapse{
+    padding: 0;
+}
+.nav>li>a {
+    /*padding: 7px 30px 7px 30px ;*/
+    text-align: center;
+}
+.sidebar ul li a {
+    color: #999;
+    font-size: 16px;
+    border-left: solid transparent;
+}
+.sidebar .active a{
+    border-left: solid #333;
+}

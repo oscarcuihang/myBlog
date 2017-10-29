@@ -28,6 +28,7 @@ class Article extends Component{
                         text: data.data.text,
                         time: data.data.time.createAt
                     })
+                    $('.articleText').html(this.state.text);
                 }
             }
         })
@@ -41,6 +42,7 @@ class Article extends Component{
                     <div className="articleTitle">
                         <h1>{this.state.title}</h1>
                     </div>
+                    <hr />
                     <p className="articleTime">发表于&nbsp;&nbsp;{this.state.time}</p>
                     <div className="articleText">
                         {this.state.text}

@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {render} from 'react-dom';
 import $ from 'jquery';
 import BlogItem from './BlogItem.js';
+import QueueAnim from 'rc-queue-anim';
 
 class BlogList extends Component{
     constructor(props){
@@ -33,13 +34,13 @@ class BlogList extends Component{
                 <div className="blogList-title">
                     <h1>Blog</h1>
                 </div>
-                <div className="blogList-content">
+                <QueueAnim delay={500} className="blogList-content">
                     {
                         this.state.blogData.map((count,i)=>{
                             return <BlogItem key={i} title={count.title} time={count.time} id={count._id} />
                         })
                     }
-                </div>
+                </QueueAnim>
             </div>
         );
     }

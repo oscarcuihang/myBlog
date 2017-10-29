@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
+var marked = require('marked');
+var markdown = require('markdown').markdown;
 
 var index = require('./server/routes/index');
 var blog = require('./server/routes/blog');
@@ -23,11 +25,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '/client/static')));
+app.use('/',express.static(path.join(__dirname, '/client/static')));
+app.use('/fe',express.static(path.join(__dirname, '/client/static/fe')));
+app.use('/be',express.static(path.join(__dirname, '/client/static/be')));
 
-app.get('/',function(req,res){
-    res.render('index.html');
-});
+// app.get('/',function(req,res){
+//     res.render('index.html');
+// });
 app.use('/blog',blog);
 app.use('/comment',comment);
 
@@ -51,7 +55,7 @@ app.use(function(err, req, res, next) {
 });
 
 //启动服务器
-var server = app.listen(8888, function(){
+var server = app.listen(8000, function(){
     var host = server.address().address;
     var port = server.address().port;
     console.log('Listening at http://%s:%s', host, port);

@@ -24,7 +24,6 @@ class Comment extends Component{
                         commentData:data.data
                     })
                 }
-                console.log(this.state.commentData);
             }
         })
     }
@@ -33,8 +32,9 @@ class Comment extends Component{
         let articleId = this.props.articleId;
         let author = $('.author').val();
         let text =  $('.commentText').val();
+        console.log($('.commentText').html());
         $.ajax({
-            url: '/comment/'+this.state.articleId,
+            url: '/comment/'+this.props.articleId,
             type: 'post',
             data:{
                 articleId: articleId,
@@ -52,17 +52,19 @@ class Comment extends Component{
         return(
             <div className="comment">
                 <div className="commentEdit">
+                    <form>
                     <p>
                         <label>名字：</label>
-                        <input placeholder="your name" className="author form-control" />
+                        <input placeholder="your name" name="name" className="author form-control" />
                     </p>
                     <p>
                         <label>评论：</label>
-                        <textarea className="commentText form-control" placeholder="your suggest"></textarea>
+                        <textarea cols="45" rows="5" name="text" className="commentText form-control" placeholder="your suggest"></textarea>
                     </p>
                     <p className="clearfix">
-                        <button className="btn btnInfo" onClick={this.submitComment}>提交评论</button>
+                        <input className="btn btnInfo" type="button" onClick={this.submitComment} value="提交评论" />
                     </p>
+                    </form>
                 </div>
                 <div className="commentList">
                     {

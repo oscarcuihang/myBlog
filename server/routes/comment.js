@@ -3,10 +3,16 @@ var express = require('express');
 var router = express.Router();
 var dbHandle = require('../dbbase/dbHandle');
 var comments = dbHandle.getModel('comment');
+//var marked = require('marked');
+//var markdown = require('markdown').markdown;
 
 //请求所有评论
 router.get('/:id',(req,res,next)=>{
     comments.find({articleId: req.params.id},(err,resData)=>{
+        //将markdown转化为HTML
+        // resData.forEach((doc)=>{
+        //     doc.text = markdown.toHTML(doc.text);
+        // })
         if(err){
             res.json({
                 'status':0,
