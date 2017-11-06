@@ -34,7 +34,7 @@ class BlogList extends Component{
                 <div className="blogList-title">
                     <h1>Blog</h1>
                 </div>
-                <QueueAnim delay={500} className="blogList-content">
+                <QueueAnim delay={300} className="blogList-content">
                     {
                         this.state.blogData.map((count,i)=>{
                             return <BlogItem key={i} title={count.title} time={count.time} id={count._id} />

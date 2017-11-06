@@ -38964,6 +38964,10 @@ var _About = __webpack_require__(418);
 
 var _About2 = _interopRequireDefault(_About);
 
+var _UpdateBlog = __webpack_require__(421);
+
+var _UpdateBlog2 = _interopRequireDefault(_UpdateBlog);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react2.default.createElement(
@@ -38971,7 +38975,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     { history: _reactRouter.hashHistory },
     _react2.default.createElement(_reactRouter.Route, { path: '/', component: _AddBlog2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/edit', component: _EditBlog2.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default })
+    _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/edit/:id', component: _UpdateBlog2.default })
 ), document.getElementById('root'));
 
 /***/ }),
@@ -39552,7 +39557,7 @@ var EditBlogItem = function (_Component) {
                     { className: 'setting' },
                     _react2.default.createElement(
                         _reactRouter.Link,
-                        { to: '/elitblog', className: 'readBlog' },
+                        { to: "/edit/" + count._id, className: 'editBlogBtn' },
                         '\u7F16\u8F91'
                     ),
                     _react2.default.createElement('br', null),
@@ -39689,6 +39694,224 @@ exports = module.exports = __webpack_require__(36)(undefined);
 
 // module
 exports.push([module.i, ".aboutContent{\r\n    float: left;\r\n    margin-top: 50px;\r\n    padding: 15px 15px 0px 30px;\r\n    min-height: calc(100vh - 50px);\r\n    width: calc(100% - 250px); \r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 421 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(14);
+
+var _jquery = __webpack_require__(35);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _reactRouter = __webpack_require__(34);
+
+var _Header = __webpack_require__(133);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _LeftNav = __webpack_require__(139);
+
+var _LeftNav2 = _interopRequireDefault(_LeftNav);
+
+__webpack_require__(422);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UpdateBlog = function (_Component) {
+    _inherits(UpdateBlog, _Component);
+
+    function UpdateBlog(props) {
+        _classCallCheck(this, UpdateBlog);
+
+        var _this = _possibleConstructorReturn(this, (UpdateBlog.__proto__ || Object.getPrototypeOf(UpdateBlog)).call(this, props));
+
+        _this.state = {
+            title: '111',
+            text: '111'
+        };
+        _this.updateSubmit = _this.updateSubmit.bind(_this);
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChangeText = _this.handleChangeText.bind(_this);
+        return _this;
+    }
+
+    _createClass(UpdateBlog, [{
+        key: 'updateSubmit',
+        value: function updateSubmit() {
+            _jquery2.default.ajax({
+                url: '/blog/edit/' + this.props.params.id,
+                type: 'post',
+                data: {
+                    title: (0, _jquery2.default)('.title').val(),
+                    text: (0, _jquery2.default)('.text').val()
+                },
+                success: function success(data) {
+                    if (data.status == 1) {
+                        alert(data.message);
+                        (0, _jquery2.default)(".updateBlog").load(location.href + ".updateBlog");
+                    }
+                }
+            });
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            _jquery2.default.ajax({
+                url: '/blog/markdown/' + this.props.params.id,
+                type: 'get',
+                //async:false,
+                success: function success(data) {
+                    console.log(data);
+                    if (data.status == 1) {
+                        _this2.setState({
+                            title: data.data.title,
+                            text: data.data.text
+                        });
+                        //$('.text1').html(this.state.text); 
+                    }
+                }
+            });
+        }
+    }, {
+        key: 'handleChange',
+        value: function handleChange(event) {
+            this.setState({
+                title: event.target.value
+            });
+        }
+    }, {
+        key: 'handleChangeText',
+        value: function handleChangeText(event) {
+            this.setState({
+                text: event.target.value
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'updateBlog' },
+                _react2.default.createElement(_Header2.default, null),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'clearfix' },
+                    _react2.default.createElement(_LeftNav2.default, null),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'addBlog-content' },
+                        _react2.default.createElement(
+                            'h2',
+                            null,
+                            '\u521B\u5EFA\u6587\u7AE0'
+                        ),
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement(
+                                'lable',
+                                null,
+                                '\u6807\u9898'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', className: 'title form-control', onChange: this.handleChange, value: this.state.title })
+                        ),
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement(
+                                'lable',
+                                null,
+                                '\u5185\u5BB9'
+                            ),
+                            _react2.default.createElement('textarea', { cols: '45', rows: '22', className: 'text form-control', onChange: this.handleChangeText, value: this.state.text })
+                        ),
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement(
+                                'button',
+                                { className: 'btn', onClick: this.updateSubmit },
+                                '\u63D0\u4EA4'
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return UpdateBlog;
+}(_react.Component);
+
+exports.default = UpdateBlog;
+
+/***/ }),
+/* 422 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(423);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(37)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../../node_modules/_css-loader@0.28.7@css-loader/index.js!./UpdateBlog.css", function() {
+			var newContent = require("!!../../../../../node_modules/_css-loader@0.28.7@css-loader/index.js!./UpdateBlog.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 423 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(36)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
 
 // exports
 

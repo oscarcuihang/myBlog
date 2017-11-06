@@ -10,9 +10,9 @@ var markdown = require('markdown').markdown;
 router.get('/',(req,res,next)=>{
     articles.find({},(err,resData)=>{
         //将文章由markdown转化为html
-        resData.forEach((doc)=>{
-            doc.text = markdown.toHTML(doc.text);
-        })
+        // resData.forEach((doc)=>{
+        //     doc.text = markdown.toHTML(doc.text);
+        // })
         if(err){
             res.json({
                 'status':0,
@@ -27,10 +27,27 @@ router.get('/',(req,res,next)=>{
         }
     })
 })
-//请求单个文章
+//请求单个文章(html)
 router.get('/:id',(req,res,next)=>{
     articles.findOne({_id:req.params.id},(err,resData)=>{
         resData.text = markdown.toHTML(resData.text);
+        if(err){
+            res.json({
+                'status':0,
+                'message':'获取失败'
+            })
+        }else{
+            res.json({
+                'status':1,
+                'message':'获取文章成功111',
+                'data':resData
+            })
+        }
+    })
+})
+//请求单个文章(markdown)
+router.get('/markdown/:id',(req,res,next)=>{
+    articles.findOne({_id:req.params.id},(err,resData)=>{
         if(err){
             res.json({
                 'status':0,
@@ -60,16 +77,16 @@ router.post('/',(req,res,next)=>{
     newArticle.save();
     res.json({
         'status':1,
-        'message':'保存成功zzz'
+        'message':'保存成功'
     });
 })
 
 //删除文章
 router.post('/remove',(req,res,next)=>{
-    console.log(req.body.id);
+    //console.log(req.body.id);
     var id = req.body.id;
     articles.remove({_id:id},(err)=>{
-        console.log(err);
+        //console.log(err);
         if(err){
             res.json({
                 'status':0,
@@ -84,4 +101,24 @@ router.post('/remove',(req,res,next)=>{
     })
 })
 
+//更新文章
+router.post('/edit/:id',(req,res,next)=>{
+    articles.findOne({_id:req.params.id}).update({
+        "title": req.body.title,
+        "text": req.body.text
+    },(err)=>{
+        if(err){
+            res.json({
+                'status':0,
+                'message':'更新失败',
+                "data": err
+            });
+        }else{
+            res.json({
+                'status':1,
+                'message':'更新成功'
+            });
+        }
+    })
+})
 module.exports = router;

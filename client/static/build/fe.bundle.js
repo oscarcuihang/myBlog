@@ -41398,7 +41398,7 @@ var BlogList = function (_Component) {
                 ),
                 _react2.default.createElement(
                     _rcQueueAnim2.default,
-                    { delay: 500, className: 'blogList-content' },
+                    { delay: 300, className: 'blogList-content' },
                     this.state.blogData.map(function (count, i) {
                         return _react2.default.createElement(_BlogItem2.default, { key: i, title: count.title, time: count.time, id: count._id });
                     })
@@ -45906,7 +45906,7 @@ exports = module.exports = __webpack_require__(36)(undefined);
 
 
 // module
-exports.push([module.i, ".article{\r\n    background-color: #f6f6f6;\r\n    min-height: 100vh;\r\n}\r\n.articleContent{\r\n    margin: 80px auto 40px;\r\n    width: 50%;\r\n    /* text-align: center; */\r\n    background-color: #fff;\r\n    border:1px solid #f1f1f1;\r\n    padding: 0px 40px 50px;\r\n}\r\n.articleTitle{\r\n    font-size: 24px;\r\n    font-weight: 400;\r\n    color: #555;\r\n}\r\n.articleTime{\r\n    color: #999;\r\n    font-size: 12px;\r\n    margin-top: -10px;\r\n}\r\n.articleText{\r\n    width: 100%;\r\n    /* text-indent: 2em; */\r\n    /* text-align: left; */\r\n    /*word-wrap: break-word;\r\n    letter-spacing: 1.5px;\r\n    line-height: 25px; */\r\n    color:#555;\r\n}\r\n.comment{\r\n    width: 50%;\r\n    margin: 0 auto;\r\n}\r\n.commentEdit{\r\n    background-color: #f1f1f1;\r\n    width: 100%;\r\n    margin-bottom: 30px;\r\n    border:2px solid #DEDEDE;\r\n    padding: 10px;\r\n    padding-bottom: 0;\r\n}\r\n.author{\r\n    width: 30%;\r\n}\r\n.commentItem{\r\n    width: 100%;\r\n    padding-top: 15px;\r\n    padding-bottom: 15px;\r\n    border-top: 1px solid #DEDEDE;\r\n    border-bottom: 1px solid #DEDEDE;\r\n    margin: 0 auto;\r\n}\r\n.btn{\r\n    float: right;\r\n}\r\n.commentItem-time{\r\n    float: right;\r\n}", ""]);
+exports.push([module.i, ".article{\r\n    background-color: #f6f6f6;\r\n    min-height: 100vh;\r\n}\r\n.articleContent{\r\n    margin: 80px auto 40px;\r\n    width: 80%;\r\n    /* text-align: center; */\r\n    background-color: #fff;\r\n    border:1px solid #f1f1f1;\r\n    padding: 0px 40px 50px;\r\n}\r\n.articleTitle{\r\n    font-size: 24px;\r\n    font-weight: 400;\r\n    color: #555;\r\n}\r\n.articleTime{\r\n    color: #999;\r\n    font-size: 12px;\r\n    margin-top: -10px;\r\n}\r\n.articleText{\r\n    width: 100%;\r\n    /* text-indent: 2em; */\r\n    /* text-align: left; */\r\n    /*word-wrap: break-word;\r\n    letter-spacing: 1.5px;\r\n    line-height: 25px; */\r\n    color:#555;\r\n}\r\n.comment{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.commentEdit{\r\n    background-color: #f1f1f1;\r\n    width: 100%;\r\n    margin-bottom: 30px;\r\n    border:2px solid #DEDEDE;\r\n    padding: 10px;\r\n    padding-bottom: 0;\r\n}\r\n.author{\r\n    width: 30%;\r\n}\r\n.commentItem{\r\n    width: 100%;\r\n    padding-top: 15px;\r\n    padding-bottom: 15px;\r\n    border-top: 1px solid #DEDEDE;\r\n    border-bottom: 1px solid #DEDEDE;\r\n    margin: 0 auto;\r\n}\r\n.btn{\r\n    float: right;\r\n}\r\n.commentItem-time{\r\n    float: right;\r\n}", ""]);
 
 // exports
 

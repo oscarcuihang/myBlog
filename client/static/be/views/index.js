@@ -7,11 +7,13 @@ import Blog from '../components/Blog/Blog.js';
 import AddBlog from '../components/Blog/AddBlog.js';
 import EditBlog from '../components/Blog/EditBlog.js'
 import About from '../components/About/About.js'
+import UpdateBlog from '../components/UpdateBlog/UpdateBlog.js';
 
 render((
     <Router history={hashHistory}>
         <Route path="/" component={AddBlog} />
         <Route path="/edit" component={EditBlog} />
         <Route path="/about" component={About} />
+        <Route path='/edit/:id' component={UpdateBlog} />
     </Router>
 ),document.getElementById('root'));

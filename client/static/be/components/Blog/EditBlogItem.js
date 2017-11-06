@@ -36,7 +36,7 @@ class EditBlogItem extends Component{
                 <h2>{count.title}</h2>
                 {count.time.createAt}
                 <div className="setting">
-                    <Link to="/elitblog" className="readBlog">
+                    <Link to={"/edit/"+count._id} className="editBlogBtn">
                         编辑
                     </Link><br /><br />
                     <span className="delete" onClick={this.deleteSubmit}>删除</span>
