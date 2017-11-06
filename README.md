@@ -57,7 +57,9 @@
 在浏览器的url栏中访问```localhost:8000```即可
 
 #### 目录结构
-![目录结构](https://github.com/wlfsmile/W-blog/images/tree,png)
+![目录结构](https://github.com/wlfsmile/myBlog/blob/master/images/tree.png)
+
+<img src="https://github.com/wlfsmile/myBlog/blob/master/images/tree.png" align="center" />
 
 + client/static: 所有静态页资源
     + be(fe): 后台管理(前端)展示页面 
