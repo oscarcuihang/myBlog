@@ -59,7 +59,7 @@
 #### 目录结构
 ![目录结构](https://github.com/wlfsmile/myBlog/blob/master/images/tree.png)
 
-<img src="https://github.com/wlfsmile/myBlog/blob/master/images/tree.png" align="center" />
+<!-- <img src="https://github.com/wlfsmile/myBlog/blob/master/images/tree.png" align="center" /> -->
 
 + client/static: 所有静态页资源
     + be(fe): 后台管理(前端)展示页面 
