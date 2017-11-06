@@ -1,22 +1,22 @@
 # myBlog
 个人博客
 
-#### 项目介绍
+### 项目介绍
 这是一个使用react+node+mongodb搭建的一个个人博客，有展示页和后台管理界面，由于是初步代码，所以后台管理界面没有写登录。博客包括后台管理界面的文章的增删改，以及前端的展示
 
-#### 技术架构
-##### 前端
+### 技术架构
+#### 前端
 + 基础：HTML+CSS+JS+JQuery（使用的ajax交互，后期会考虑用fetch）
 + 框架：React+React-Router
 + 语法：ES6
 + 构建工具：Webpack
-##### 后台
+#### 后台
 + Node+Express搭建
-##### 数据库 
+#### 数据库 
 + MongoDB数据库
 
-#### 项目运行
-##### 安装
+### 项目运行
+#### 安装
 + 安装好node环境
 + 安装好mongodb
 + 可安装一个mongodb可视化工具（Robo 3T）
@@ -37,7 +37,7 @@
 ```
     npm install -g nodemon
 ```
-##### 使用
+#### 使用
 + 操作mongodb
     + 新建一个database，命名为blog
     + （可选）新建两个collection，为articles和comments，可自己先录入数据，也可以直接到后台管理界面去输入存入数据
@@ -53,10 +53,10 @@
 ```
     nodemon app.js
 ```
-##### 访问
+#### 访问
 在浏览器的url栏中访问```localhost:8000```即可
 
-#### 目录结构
+### 目录结构
 ![目录结构](https://github.com/wlfsmile/myBlog/blob/master/images/tree.png)
 
 <!-- <img src="https://github.com/wlfsmile/myBlog/blob/master/images/tree.png" align="center" /> -->
@@ -78,14 +78,14 @@
     + package.json：配置环境文件
     + webpack.config.js：webpack配置文件
 
-#### 项目功能(持续更新)
-##### 前端展示
+### 项目功能(持续更新)
+#### 前端展示
 + 首页
 + 博客列表页
 + 文章详情页
 + 评论
 + about页
-##### 后台管理
+#### 后台管理
 + 新建文章页
 + 更新/删除文章
 + 编辑about页
