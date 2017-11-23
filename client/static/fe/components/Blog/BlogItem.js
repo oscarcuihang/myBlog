@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {render} from 'react-dom';
 import {Link} from 'react-router';
+import BlogImg from '../../assets/images/hero1.jpeg';
 
 class BlogItem extends Component{
     constructor(props){
@@ -10,12 +11,20 @@ class BlogItem extends Component{
     render(){
         const {title,time,id} = this.props;
         return(
-            <div className="blogItem clearfix">
-                <h2>{title}</h2>
-                {time.createAt}
-                <Link to={"/blog/"+id} className="readBlog">
-                    阅读全文>>
-                </Link>
+            <div className="blogItem">
+                {/* <img src={BlogImg} /> */}
+                {/* <figcaption> */}
+                    <p className="blogItem-content">
+                        {title} 
+                        <span className="blogItem-time">
+                            {time}
+                        </span>
+                    </p>
+                    {/* <p>{time.createAt}</p> */}
+                    {/* <Link to={"/blog/"+id} className="readBlog">
+                        阅读全文>>
+                    </Link> */}
+                {/* </figcaption> */}
             </div>
         );
     }

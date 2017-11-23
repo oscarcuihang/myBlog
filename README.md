@@ -73,7 +73,7 @@
 + server：后台文件夹
     + dbbase：数据文件
     + routes：所有路由
-    + .babelrc：es6z转码使用文件
+    + .babelrc：es6转码使用文件
     + app.js：node入口文件
     + package.json：配置环境文件
     + webpack.config.js：webpack配置文件
@@ -86,6 +86,8 @@
 + 评论
 + about页
 #### 后台管理
-+ 新建文章页
++ 新建文章页（实现提交markdown格式）
 + 更新/删除文章
 + 编辑about页
+
+### 

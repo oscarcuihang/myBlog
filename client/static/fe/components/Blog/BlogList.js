@@ -3,6 +3,9 @@ import {render} from 'react-dom';
 import $ from 'jquery';
 import BlogItem from './BlogItem.js';
 import QueueAnim from 'rc-queue-anim';
+import BlogAvatar from '../../assets/images/hero1.jpeg';
+import Prev from '../../assets/images/prev.png';
+import Next from '../../assets/images/next.png';
 
 class BlogList extends Component{
     constructor(props){
@@ -32,15 +35,28 @@ class BlogList extends Component{
         return(
             <div className="blogList">
                 <div className="blogList-title">
-                    <h1>Blog</h1>
+                    {/* <span>Blog</span> */}
+                    <img src={BlogAvatar} className="BlogAvatar" />
                 </div>
-                <QueueAnim delay={300} className="blogList-content">
-                    {
-                        this.state.blogData.map((count,i)=>{
-                            return <BlogItem key={i} title={count.title} time={count.time} id={count._id} />
-                        })
-                    }
-                </QueueAnim>
+                <div className="blogList-main clearfix">
+                    {/* <div className="arr"><span  className="prev">上一页</span></div> */}
+                    <div className="blogList-content">
+                        {/* <div className="arr">
+                            <img src={Prev} />
+                        </div> */}
+                        <QueueAnim delay={100}>
+                            {
+                                this.state.blogData.map((count,i)=>{
+                                    return <BlogItem key={i} title={count.title} time={count.time} id={count._id} />
+                                })
+                            }
+                        </QueueAnim>
+                        {/* <div className="arr">
+                            <img src={Next} />
+                        </div> */}
+                    </div>
+                    {/* <div className="arr next"><span>下一页</span></div> */}
+                </div>
             </div>
         );
     }

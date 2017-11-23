@@ -5,6 +5,7 @@ var marked = require('marked');
 var dbHandle = require('../dbbase/dbHandle');
 var articles = dbHandle.getModel('article');
 var markdown = require('markdown').markdown;
+var moment = require('moment');
 
 //请求所有文章
 router.get('/',(req,res,next)=>{
@@ -19,6 +20,10 @@ router.get('/',(req,res,next)=>{
                 'message':'获取失败'
             })
         }else{
+            resData.forEach((doc)=>{
+                doc.time = moment(doc.time).format("YYYY-MM-DD HH:mm:ss");
+                console.log(doc);
+            })
             res.json({
                 'status':1,
                 'message':'获取成功111',
@@ -68,10 +73,11 @@ router.post('/',(req,res,next)=>{
         res.statusCode = 400;
         return res.send('Error 400: Post syntax incorrect.');
     }
-
+    var nowDate = new Date();
     let article = {
         title : req.body.title,
-        text : req.body.text
+        text : req.body.text,
+        time : nowDate.toLocaleDateString()
     }
     let newArticle = new articles(article);
     newArticle.save();

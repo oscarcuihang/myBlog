@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {render} from 'react-dom';
+import {Link} from 'react-router';
 import Header from '../Header/Header.js';
 import './Home.css';
 import Bg from '../../assets/images/hero1.jpeg'
@@ -9,7 +10,7 @@ class Home extends Component{
     render(){
         return(
             <div className="home">
-                <Header />
+                {/* <Header />
                 <div className="homeBox">
                     <div className="container">
                         <div className="row">
@@ -26,6 +27,18 @@ class Home extends Component{
                                 <div className="scroll"></div>
                             </div>
                         </div>
+                    </div>
+                </div> */}
+                <div className="homeContent">
+                    <p className="avatar">
+                        <img src={Bg} />
+                    </p>
+                    <div className="homeNav">
+                        <span><Link to="/blog">Blog</Link></span>
+                        <span>|</span>
+                        <span><Link to="/about">About</Link></span>
+                        <span>|</span>
+                        <span><Link to="">Comment</Link></span>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var dbHandle = require('../dbbase/dbHandle');
 var comments = dbHandle.getModel('comment');
+var moment = require('moment');
 //var marked = require('marked');
 //var markdown = require('markdown').markdown;
 
@@ -13,6 +14,9 @@ router.get('/:id',(req,res,next)=>{
         // resData.forEach((doc)=>{
         //     doc.text = markdown.toHTML(doc.text);
         // })
+        resData.forEach((doc)=>{
+            doc.time = moment(doc.time).format("YYYY-MM-DD HH:mm:ss");
+        })
         if(err){
             res.json({
                 'status':0,
