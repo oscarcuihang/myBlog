@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import $ from 'jquery';
 import BlogItem from './BlogItem.js';
 import QueueAnim from 'rc-queue-anim';
-import BlogAvatar from '../../assets/images/hero1.jpeg';
+import BlogAvatar from '../../assets/images/avatar.jpg';
 import Prev from '../../assets/images/prev.png';
 import Next from '../../assets/images/next.png';
 
@@ -37,6 +37,8 @@ class BlogList extends Component{
                 <div className="blogList-title">
                     {/* <span>Blog</span> */}
                     <img src={BlogAvatar} className="BlogAvatar" />
+                    <p className="authorName">wlfsmile</p>
+                    <p className="authorResume">Front-End Engineer</p>
                 </div>
                 <div className="blogList-main clearfix">
                     {/* <div className="arr"><span  className="prev">上一页</span></div> */}

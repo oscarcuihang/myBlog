@@ -10,7 +10,7 @@ class Blog extends Component{
     render(){
         return(
             <div className="blog">
-                {/* <Header /> */}
+                <Header /> 
                 <BlogList />
                 {/* <Page /> */}
             </div>

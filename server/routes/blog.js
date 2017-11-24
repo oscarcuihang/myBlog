@@ -11,22 +11,15 @@ var moment = require('moment');
 router.get('/',(req,res,next)=>{
     articles.find({},(err,resData)=>{
         //将文章由markdown转化为html
-        // resData.forEach((doc)=>{
-        //     doc.text = markdown.toHTML(doc.text);
-        // })
         if(err){
             res.json({
                 'status':0,
                 'message':'获取失败'
             })
         }else{
-            resData.forEach((doc)=>{
-                doc.time = moment(doc.time).format("YYYY-MM-DD HH:mm:ss");
-                console.log(doc);
-            })
             res.json({
                 'status':1,
-                'message':'获取成功111',
+                'message':'获取成功',
                 'data':resData
             })
         }
@@ -44,7 +37,7 @@ router.get('/:id',(req,res,next)=>{
         }else{
             res.json({
                 'status':1,
-                'message':'获取文章成功111',
+                'message':'获取文章成功',
                 'data':resData
             })
         }

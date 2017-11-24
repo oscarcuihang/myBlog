@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {Link} from 'react-router';
 import Header from '../Header/Header.js';
 import './Home.css';
-import Bg from '../../assets/images/hero1.jpeg'
+import Bg from '../../assets/images/avatar.jpg'
 
 class Home extends Component{
 

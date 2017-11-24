@@ -15,7 +15,7 @@
     margin: 0 auto;
     text-align: center;
     border-bottom: 1px solid #eee;
-    width: 50%;
+    width: 40%;
     padding-bottom: 30px;
 }
 .BlogAvatar{
@@ -23,11 +23,23 @@
     height: 120px;
     border-radius: 50%;
 }
+.authorName{
+    font-weight: 400px;
+    font-size: 20px;
+    color: #222;
+    margin-top: 20px;
+}
+.authorResume{
+    font-size: 14px;
+    font-weight: 300px;
+    color: #aaa;
+    font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
 .blogList-main{
     /* text-align: center; */
     /* display: inline-block; */
     margin: 0 auto;  
-    width: 50%;
+    width: 40%;
 }
 .blogList-content{
     /* margin: 0 auto;   */
@@ -40,14 +52,28 @@
 .blogItem{
     width: 100%;
     padding: 40px 0;
+    padding-left: 10px;
     border-bottom: 1px solid #eee;
 }
-.blogItem-content{
-    line-height: 100%;
+.blogItem a{
+    text-decoration: none;
 }
-.blogItem-time{
-    position: absolute;
-    right: 0;
+.blogItem-content{
+    display: block;
+} 
+.blogItem-content-title{
+    color: #2b2b2b;
+    font: 700 18px/1.8 "Microsoft Yahei","Helvetica Neue",helvetica,Arial,sans-serif;
+}
+.blogItem-content-time{
+    color: #bbb;
+    font: 300 16px/1.6 "Microsoft Yahei","Helvetica Neue",helvetica,Arial,sans-serif;
+    float: right; 
+    /* position: absolute;
+    right: 0; */
+}
+.blogItem :hover{
+    color: #5badf1;
 }
 /* .arr{
     float: left;

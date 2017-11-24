@@ -13,8 +13,10 @@ module.exports = {
             require: true
         },
         time:{
-            type: Date,
-            default: Date.now()
+            createAt:{
+                type: Date,
+                default: Date.now()
+            }
         }
     },
     comment:{
@@ -31,8 +33,8 @@ module.exports = {
             require: true
         },
         time:{
-            type: String,
-            default: Date.now().toLocaleString()
+            type: Date,
+            default: Date.now()
         }
     }
 }

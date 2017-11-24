@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Header from '../Header/Header.js';
 import Comment from './Comment'
 import './Article.css';
+import moment from 'moment';
 
 class Article extends Component{
     constructor(props){
@@ -26,7 +27,7 @@ class Article extends Component{
                     this.setState({
                         title: data.data.title,
                         text: data.data.text,
-                        time: data.data.time.createAt
+                        time: moment(data.data.time.createAt).format('MMM Do YY')
                     })
                     $('.articleText').html(this.state.text);
                 }
@@ -38,17 +39,20 @@ class Article extends Component{
         return(
             <div className="article">
                 <Header />
-                <div className="articleContent">
-                    <div className="articleTitle">
-                        <h1>{this.state.title}</h1>
-                    </div>
-                    <hr />
-                    <p className="articleTime">发表于&nbsp;&nbsp;{this.state.time}</p>
-                    <div className="articleText">
-                        {this.state.text}
-                    </div>
-                </div>
-                <Comment articleId={this.state.articleId} />
+                <div className="articleMain"> 
+                    <div className="articleContent">
+                        <div className="articleTitle">
+                            <h1>{this.state.title}</h1>
+                        </div>
+                        {/* <hr /> */}
+                        <p className="articleTime">{this.state.time}</p>
+                        <div className="articleText">
+                            {this.state.text}
+                        </div>
+                    </div> 
+                    <hr /> 
+                    <Comment articleId={this.state.articleId} /> 
+                    </div> 
             </div>
         );
     }

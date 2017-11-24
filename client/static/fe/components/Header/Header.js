@@ -8,8 +8,14 @@ class Header extends Component{
 
     render(){
         return (
-            <div className="header clearfix">
-                <div className="for-sticky">
+            <div className="header">
+                <nav className="main-nav">
+                    <Link to="/">Home</Link>
+                    <Link to="/blog">Blog</Link>
+                    <Link to="/about">About</Link>
+                    <a href="https://github.com/wlfsmile" className="myGit">github</a>
+                </nav>
+                {/* <div className="for-sticky">
                     <div className="col-md-2 col-xs-6 logo">
                         <Link to="/">
                             <img alt="logo" className="logo-nav" src={Logo} />
@@ -40,7 +46,7 @@ class Header extends Component{
                             </span>
                         </li>
                     </ul>
-                </div>
+                </div> */}
                 {/* <button className="menu-button" id="open-button">
                     <span></span>
                     <span></span>

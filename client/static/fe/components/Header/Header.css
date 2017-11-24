@@ -1,13 +1,26 @@
-/* .header{
-    background-color: #aaa;
-    height: 50px;
-    border-bottom: 1px
+.main-nav{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  text-align: right;
+  padding: 20px 20px 0;
+  background: rgba(255,255,255,.8);
 }
-.header li{
-    float: left;
-    list-style: none;
-} */
-.for-sticky {
+.main-nav a{
+  top: 8px;
+  right: 6px;
+  font-size: 13px;
+  padding: 8px 12px;
+  color: #5badf0;
+  text-decoration: none;
+}
+.main-nav a.myGit{
+  background: #5badf0;
+  color: #fff;
+  margin-left: 12px;
+  border-radius: 3px;
+}
+/* .for-sticky {
   position: fixed;
   z-index: -1;
   bottom: 0;
@@ -37,7 +50,7 @@
   width: 45px;
   display: block;
 }
-/* Menu Button */
+
 .menu-button {
   width: 34px;
   height: 45px;
@@ -78,7 +91,6 @@
   cursor: pointer;
   float: left;
   list-style: none;
-  /* margin-right: 30px; */
   font-weight: bold;
   font-size: 24px;
   line-height: 50px;
@@ -91,4 +103,4 @@
   display: inline-block;
   height: 100%;
   padding: 0 20px;
-}
+} */
