@@ -11,7 +11,7 @@ class BlogItem extends Component{
     }
     
     render(){
-        const {title,time,id} = this.props;
+        const {title,time,id,text} = this.props;
         return(
             <div className="blogItem">
                 {/* <img src={BlogImg} /> */}
@@ -20,14 +20,11 @@ class BlogItem extends Component{
                         <span className="blogItem-content-title">
                             {title} 
                         </span>
+                        {/* <p className="blogItem-content-text">{text}</p> */}
                         <span className="blogItem-content-time">
                             {this.props.time.createAt}
                         </span>
                     </Link>
-                    {/* <p>{time.createAt}</p> */}
-                    {/* <Link to={"/blog/"+id} className="readBlog">
-                        阅读全文>>
-                    </Link> */}
                 {/* </figcaption> */}
             </div>
         );

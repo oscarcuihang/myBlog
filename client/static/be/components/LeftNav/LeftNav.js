@@ -22,7 +22,7 @@ class LeftNav extends Component{
                                     编辑文章
                                 </Link>
                             </li>
-                            <li className="joinCompany-tab">
+                            <li className="about-tab">
                                 <Link to="/about" data-toggle="tab">
                                     About
                                 </Link>

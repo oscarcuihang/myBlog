@@ -34,12 +34,11 @@ class BlogList extends Component{
     render(){
         return(
             <div className="blogList">
-                <div className="blogList-title">
-                    {/* <span>Blog</span> */}
+                {/* <div className="blogList-title">
                     <img src={BlogAvatar} className="BlogAvatar" />
                     <p className="authorName">wlfsmile</p>
                     <p className="authorResume">Front-End Engineer</p>
-                </div>
+                </div>  */}
                 <div className="blogList-main clearfix">
                     {/* <div className="arr"><span  className="prev">上一页</span></div> */}
                     <div className="blogList-content">
@@ -49,7 +48,7 @@ class BlogList extends Component{
                         <QueueAnim delay={100}>
                             {
                                 this.state.blogData.map((count,i)=>{
-                                    return <BlogItem key={i} title={count.title} time={count.time} id={count._id} />
+                                    return <BlogItem key={i} title={count.title} time={count.time} id={count._id} text={count.text} />
                                 })
                             }
                         </QueueAnim>

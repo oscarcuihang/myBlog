@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import {Link} from 'react-router';
 import './Header.css';
 import Logo from '../../assets/images/logo.png';
+import BlogAvatar from '../../assets/images/avatar.jpg';
 
 class Header extends Component{
 
@@ -10,11 +11,16 @@ class Header extends Component{
         return (
             <div className="header">
                 <nav className="main-nav">
-                    <Link to="/">Home</Link>
+                    <Link to="/">← Home</Link>
                     <Link to="/blog">Blog</Link>
                     <Link to="/about">About</Link>
                     <a href="https://github.com/wlfsmile" className="myGit">github</a>
                 </nav>
+                 <div className="resume-title">
+                    <img src={BlogAvatar} className="BlogAvatar" />
+                    <p className="authorName">wlfsmile</p>
+                    <p className="authorResume">Front-End Engineer</p>
+                </div> 
                 {/* <div className="for-sticky">
                     <div className="col-md-2 col-xs-6 logo">
                         <Link to="/">

@@ -11,6 +11,10 @@ var moment = require('moment');
 router.get('/',(req,res,next)=>{
     articles.find({},(err,resData)=>{
         //将文章由markdown转化为html
+        resData.forEach((doc)=>{
+            doc.text = markdown.toHTML(doc.text);
+            // console.log(doc);
+        })
         if(err){
             res.json({
                 'status':0,
@@ -66,11 +70,9 @@ router.post('/',(req,res,next)=>{
         res.statusCode = 400;
         return res.send('Error 400: Post syntax incorrect.');
     }
-    var nowDate = new Date();
     let article = {
         title : req.body.title,
-        text : req.body.text,
-        time : nowDate.toLocaleDateString()
+        text : req.body.text
     }
     let newArticle = new articles(article);
     newArticle.save();

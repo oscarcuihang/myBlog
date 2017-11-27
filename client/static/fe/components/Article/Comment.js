@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {render} from 'react-dom';
 import $ from 'jquery';
 import CommentItem from './CommentItem.js';
+import moment from 'moment';
 
 class Comment extends Component{
     constructor(props){
@@ -18,7 +19,7 @@ class Comment extends Component{
             type: 'get',
             dataType: 'json',
             success: (data)=>{
-                console.log(data);
+                // console.log(data);
                 if(data.status == 1){
                     this.setState({
                         commentData:data.data
@@ -32,7 +33,7 @@ class Comment extends Component{
         let articleId = this.props.articleId;
         let author = $('.author').val();
         let text =  $('.commentText').val();
-        console.log($('.commentText').html());
+        // console.log($('.commentText').html());
         $.ajax({
             url: '/comment/'+this.props.articleId,
             type: 'post',

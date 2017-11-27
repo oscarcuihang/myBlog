@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import Header from '../Header/Header';
 import BlogList from './BlogList.js';
 import Page from './Page.js';
+import Footer from '../Footer/Footer.js';
 import './Blog.css';
 
 class Blog extends Component{
@@ -13,6 +14,7 @@ class Blog extends Component{
                 <Header /> 
                 <BlogList />
                 {/* <Page /> */}
+                <Footer />
             </div>
         );
     }

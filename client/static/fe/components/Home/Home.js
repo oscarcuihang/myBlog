@@ -38,7 +38,9 @@ class Home extends Component{
                         <span>|</span>
                         <span><Link to="/about">About</Link></span>
                         <span>|</span>
-                        <span><Link to="">Comment</Link></span>
+                        {/* <span><Link to="">Comment</Link></span>
+                        <span>|</span> */}
+                        <span><Link to="https://github.com/wlfsmile">Github</Link></span>
                     </div>
                 </div>
             </div>

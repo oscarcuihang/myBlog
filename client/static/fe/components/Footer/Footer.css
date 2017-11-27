@@ -1,0 +1,14 @@
+.foot{
+    background: #fff;
+    width: 100%;
+}
+.copyright{
+    text-align: center;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+/* .foot{
+    position: fixed;
+    bottom: 0;
+} */

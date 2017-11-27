@@ -1,3 +1,6 @@
+.header{
+  overflow: hidden;
+}
 .main-nav{
   position: fixed;
   z-index: 100;
@@ -19,6 +22,32 @@
   color: #fff;
   margin-left: 12px;
   border-radius: 3px;
+}
+.resume-title{
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    width: 40%;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.BlogAvatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.authorName{
+    font-weight: 400px;
+    font-size: 20px;
+    color: #222;
+    margin-top: 10px;
+}
+.authorResume{
+    font-size: 14px;
+    font-weight: 300px;
+    color: #aaa;
+    font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 /* .for-sticky {
   position: fixed;
