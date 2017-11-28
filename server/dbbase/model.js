@@ -36,5 +36,27 @@ module.exports = {
             type: Date,
             default: Date.now()
         }
+    },
+    user:{
+        userName:{
+            type: String,
+            require: true
+        },
+        password:{
+            type: String,
+            require: true
+        }
+        // avatar: {
+        //     type: String,
+        //     require: true
+        // },
+        // introduce:{ //一句话简介
+        //     type: String,
+        //     require: true
+        // },
+        // bio:{//详细介绍（about页面）
+        //     type: String,
+        //     require: true
+        // }
     }
 }

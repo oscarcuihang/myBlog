@@ -9,6 +9,7 @@ var marked = require('marked');
 var markdown = require('markdown').markdown;
 
 var index = require('./server/routes/index');
+var about = require('./server/routes/about');
 var blog = require('./server/routes/blog');
 var comment = require('./server/routes/comment');
 
@@ -32,6 +33,7 @@ app.use('/be',express.static(path.join(__dirname, '/client/static/be')));
 // app.get('/',function(req,res){
 //     res.render('index.html');
 // });
+app.use('/about',about);
 app.use('/blog',blog);
 app.use('/comment',comment);
 

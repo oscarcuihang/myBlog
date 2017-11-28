@@ -13,7 +13,7 @@ class LeftNav extends Component{
                     <div className="sidebar-nav navbar-collapse">
                         <ul className="nav in side accordion-group" id="side-menu">
                             <li className="creat-tab active">
-                                <Link to="/"  data-toggle="tab">
+                                <Link to="/blog"  data-toggle="tab">
                                     创建文章
                                 </Link>
                             </li>
