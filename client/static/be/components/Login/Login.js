@@ -8,8 +8,16 @@ class Login extends Component{
 
     constructor(props){
         super(props);
+        this.state == {
+            logined: false
+        };
         this.loginSubmit = this.loginSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
     }
+
+    // handleChange(e){
+    //     this.setState({})
+    // }
 
     loginSubmit(){
         // console.log($('#userName').val());
@@ -24,7 +32,10 @@ class Login extends Component{
             success: (data)=>{
                 console.log(data);
                 if(data.status == 1){
-                    window.location = '/be/#/blog';
+                    //window.location = '/be/#/blog';
+                    this.setState({
+                        logined: true
+                    });
                 }
             },
             error: ()=>{
@@ -34,6 +45,12 @@ class Login extends Component{
     }
 
     render(){
+        console.log(this.state);
+        // if(this.props.logined){
+        //     return(
+        //         <Redirect to="/blog" />
+        //     );
+        // }
         return(
             <div className="login">
                 <form action="" method="post">
