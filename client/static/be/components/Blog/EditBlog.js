@@ -34,7 +34,7 @@ class EditBlog extends Component{
     render(){
         return(
             <div className="editBlog">
-                <Header />
+                {/* <Header /> */}
                 <div className="clearfix">
                     <LeftNav />
                     <div className="blogContent">

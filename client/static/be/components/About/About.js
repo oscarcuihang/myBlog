@@ -9,7 +9,7 @@ class About extends Component{
     render(){
         return(
             <div className="about">
-                <Header />
+                {/* <Header /> */}
                 <div className="clearfix">
                     <LeftNav />
                     <div className="aboutContent">

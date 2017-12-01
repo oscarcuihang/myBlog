@@ -39214,6 +39214,10 @@ var _reactRouter = __webpack_require__(27);
 
 __webpack_require__(541);
 
+var _avatar = __webpack_require__(559);
+
+var _avatar2 = _interopRequireDefault(_avatar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39234,13 +39238,8 @@ var Login = function (_Component) {
             logined: false
         };
         _this.loginSubmit = _this.loginSubmit.bind(_this);
-        // this.handleChange = this.handleChange.bind(this);
         return _this;
     }
-
-    // handleChange(e){
-    //     this.setState({})
-    // }
 
     _createClass(Login, [{
         key: 'loginSubmit',
@@ -39258,8 +39257,9 @@ var Login = function (_Component) {
                 },
                 success: function success(data) {
                     console.log(data);
+
                     if (data.status == 1) {
-                        //window.location = '/be/#/blog';
+                        window.location = '/be/#/blog';
                         _this2.setState({
                             logined: true
                         });
@@ -39274,7 +39274,10 @@ var Login = function (_Component) {
         key: 'render',
         value: function render() {
             console.log(this.state);
-            // if(this.props.logined){
+            // if(this.state == null){
+
+            // }else if(this.props.logined){
+            //     console.log(1);
             //     return(
             //         <Redirect to="/blog" />
             //     );
@@ -39282,33 +39285,28 @@ var Login = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'login' },
+                _react2.default.createElement('img', { src: _avatar2.default, className: 'loginAvatar' }),
                 _react2.default.createElement(
-                    'form',
-                    { action: '', method: 'post' },
+                    'div',
+                    { className: 'box' },
                     _react2.default.createElement(
-                        'p',
-                        null,
+                        'form',
+                        { action: '', method: 'post', className: 'loginForm' },
                         _react2.default.createElement(
-                            'label',
+                            'p',
                             null,
-                            'name:'
+                            _react2.default.createElement('input', { type: 'text', className: 'form-control form-input', name: 'userName', id: 'userName', placeholder: 'name' })
                         ),
-                        _react2.default.createElement('input', { type: 'text', name: 'userName', id: 'userName' })
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
                         _react2.default.createElement(
-                            'label',
+                            'p',
                             null,
-                            'password:'
+                            _react2.default.createElement('input', { type: 'password', className: 'form-control form-input', name: 'password', id: 'password', placeholder: 'password' })
                         ),
-                        _react2.default.createElement('input', { type: 'password', name: 'password', id: 'password' })
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        _react2.default.createElement('input', { type: 'button', value: 'submit', onClick: this.loginSubmit })
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement('input', { type: 'button', className: 'btn btn-primary btn-submit', value: '\u767B\u5F55', onClick: this.loginSubmit })
+                        )
                     )
                 )
             );
@@ -39360,7 +39358,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".login{\r\n    width: 100%;\r\n    height: 100vh;\r\n    overflow: hidden;\r\n    background: url(https://raw.githubusercontent.com/MrQingchun/lpy-nodejs/master/public/img/bg2.jpg);\r\n    text-align: center;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-direction: column;\r\n}\r\n.loginAvatar{\r\n    width: 100px;\r\n    height: 100px;\r\n    border-radius: 50%;\r\n    border: 4px soild #fff;\r\n}\r\n.box{\r\n    width: 400px;\r\n    color: #666;\r\n    text-align: center;\r\n    margin-top: 30px;\r\n    margin-bottom: 100px;\r\n    border-radius: 4px;\r\n    border: 2px solid rgba(255,255,255, 0.2);\r\n    border-top: 0;\r\n    position: relative;\r\n}\r\n.box::after {\r\n    content: '';\r\n    display: block;\r\n    width: 40px;\r\n    height: 40px;\r\n    position: absolute;\r\n    top: -20px;\r\n    left: 50%;\r\n    margin-left: -21px;\r\n    border-top-left-radius: 4px;\r\n    border-left: 2px solid rgba(255,255,255, 0.3);\r\n    border-top: 2px solid rgba(255,255,255, 0.3);\r\n    transform: rotate(45deg);\r\n    box-shadow: inset 1px 0 0 rgba(255,255,255,0.2), inset 0 1px 0 rgba(255,255,255,0.2);\r\n}\r\n.box::before {\r\n    content: '';\r\n    display: block;\r\n    width: 400px;\r\n    height: 2px;\r\n    position: absolute;\r\n    /* margin: -199px 199px; */\r\n    border-top-left-radius: 4px;\r\n    /* transform: rotate(90deg); */\r\n    box-shadow: inset 171px 0 0 0 rgba(255,255,255, 0.2), inset -171px 0 0 0 rgba(255,255,255, 0.2);\r\n}\r\n.loginForm{\r\n    height: calc(100% - 40px);\r\n    padding: 20px;\r\n}\r\n.form-input{\r\n    background: transparent;\r\n    margin-top: 30px;\r\n    border: 2px solid rgba(255,255,255,0.3);\r\n    box-shadow: inset 0 0 4px rgba(255,255,255,0.2),0 0 4px rgba(255,255,255,0.2);\r\n}\r\n.btn-submit{\r\n    width: 360px;\r\n    height: 40px;\r\n    background-color: #3B89F5;\r\n    border-color: #3B89F5;\r\n    margin-top: 20px;\r\n}\r\n.btn-submit:hover{\r\n    color: #fff;\r\n    background-color: #0C6CED;\r\n    border-color: #0C6CED;\r\n    text-decoration: none;\r\n}", ""]);
 
 // exports
 
@@ -39419,7 +39417,6 @@ var Blog = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'blog' },
-                _react2.default.createElement(_Header2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'clearfix' },
@@ -39483,7 +39480,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".sidebar{\r\n    float: left;\r\n    position: fixed;\r\n    left:0;\r\n    width: 250px;\r\n    padding-top: 28px;\r\n    background-color: #f6f6f6;\r\n    margin-top: 50px;\r\n    overflow: hidden;\r\n    min-height: calc(100vh - 50px);\r\n}\r\n.side > li > a:focus, .side > li > a:hover {\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n.navbar-collapse{\r\n    padding: 0;\r\n}\r\n.nav>li>a {\r\n    /*padding: 7px 30px 7px 30px ;*/\r\n    text-align: center;\r\n}\r\n.sidebar ul li a {\r\n    color: #999;\r\n    font-size: 16px;\r\n    border-left: solid transparent;\r\n}\r\n.sidebar .active a{\r\n    border-left: solid #333;\r\n}", ""]);
+exports.push([module.i, ".sidebar{\r\n    float: left;\r\n    position: fixed;\r\n    left:0;\r\n    width: 250px;\r\n    padding-top: 28px;\r\n    /* background-color: #f6f6f6; */\r\n    /* margin-top: 50px; */\r\n    overflow: hidden;\r\n    min-height: 100vh;\r\n    background: url(https://raw.githubusercontent.com/MrQingchun/lpy-nodejs/master/public/img/bg2.jpg);\r\n\r\n}\r\n/* .side > li > a:focus, .side > li > a:hover {\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n} */\r\n.navbar-collapse{\r\n    padding: 0;\r\n}\r\n.nav>li>a {\r\n    /*padding: 7px 30px 7px 30px ;*/\r\n    text-align: center;\r\n}\r\n.sidebar ul li a {\r\n    color: #333;\r\n    font-size: 16px;\r\n    border-left: solid transparent;\r\n}\r\n.sidebar .active a{\r\n    border-left: solid #333;\r\n}", ""]);
 
 // exports
 
@@ -39548,7 +39545,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".blogContent, .addBlog-content{\r\n    float: left;\r\n    margin-top: 50px;\r\n    padding: 15px 15px 0px 30px;\r\n    min-height: calc(100vh - 50px);\r\n    width: 70%; \r\n    margin-left: 250px;\r\n}\r\n.addBlog-content p{\r\n    margin-top: 30px;\r\n}\r\n.editBlogItem{\r\n    cursor: pointer;\r\n    text-align: left;\r\n    width: 100%;\r\n    height: 100px;\r\n    background-color: #fff;\r\n    border:1px solid #f1f1f1;\r\n     margin: 30px; \r\n    padding-left: 20px;\r\n}\r\n.setting{\r\n    float: right;\r\n    margin-right: 20px;\r\n    margin-top: -40px;\r\n}", ""]);
+exports.push([module.i, ".blogContent, .addBlog-content{\r\n    float: left;\r\n    /* margin-top: 50px; */\r\n    padding: 15px 15px 0px 30px; \r\n    min-height: 100vh;\r\n    width: 70%; \r\n    margin-left: 250px;\r\n}\r\n.addBlog-content p{\r\n    margin-top: 30px;\r\n}\r\n.editBlogItem{\r\n    cursor: pointer;\r\n    text-align: left;\r\n    width: 100%;\r\n    height: 100px;\r\n    background-color: #fff;\r\n    border:1px solid #f1f1f1;\r\n     margin: 30px; \r\n    padding-left: 20px;\r\n}\r\n.setting{\r\n    float: right;\r\n    margin-right: 20px;\r\n    margin-top: -40px;\r\n}", ""]);
 
 // exports
 
@@ -39630,7 +39627,6 @@ var AddBlog = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'addBlog' },
-                _react2.default.createElement(_Header2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'clearfix' },
@@ -39769,7 +39765,6 @@ var EditBlog = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'editBlog' },
-                _react2.default.createElement(_Header2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'clearfix' },
@@ -39946,7 +39941,6 @@ var About = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'about' },
-                _react2.default.createElement(_Header2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'clearfix' },
@@ -40135,7 +40129,6 @@ var UpdateBlog = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'updateBlog' },
-                _react2.default.createElement(_Header2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'clearfix' },
@@ -40146,7 +40139,7 @@ var UpdateBlog = function (_Component) {
                         _react2.default.createElement(
                             'h2',
                             null,
-                            '\u521B\u5EFA\u6587\u7AE0'
+                            '\u7F16\u8F91\u6587\u7AE0'
                         ),
                         _react2.default.createElement(
                             'p',
@@ -40232,6 +40225,12 @@ exports.push([module.i, "", ""]);
 
 // exports
 
+
+/***/ }),
+/* 559 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "../images/6d9627d4.avatar.jpg";
 
 /***/ })
 /******/ ]);

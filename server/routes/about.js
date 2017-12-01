@@ -20,17 +20,10 @@ router.post('/',(req,res,next)=>{
     var query = {name:userName,password:password};
         users.count(query,(err,resData)=>{
             if(err){
-                if(!req.body.userName || !req.body.password){
-                    res.json({
-                        'status':0,
-                        'message':'用户名或密码不能为空'
-                    })
-                }else{
-                    res.json({
-                        'status':0,
-                        'message':'登录失败'
-                    })
-                }
+                res.json({
+                    'status':0,
+                    'message':'登录失败'
+                })
             }else{
                 if(resData == 1){
                     res.json({
@@ -40,7 +33,7 @@ router.post('/',(req,res,next)=>{
                 }else{
                     res.json({
                         'status':0,
-                        'message':'用户名或密码错误',
+                        'message':'用户名或密码错误'
                     })
                 }
             }

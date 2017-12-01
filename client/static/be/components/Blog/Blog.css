@@ -1,8 +1,8 @@
 .blogContent, .addBlog-content{
     float: left;
-    margin-top: 50px;
-    padding: 15px 15px 0px 30px;
-    min-height: calc(100vh - 50px);
+    /* margin-top: 50px; */
+    padding: 15px 15px 0px 30px; 
+    min-height: 100vh;
     width: 70%; 
     margin-left: 250px;
 }

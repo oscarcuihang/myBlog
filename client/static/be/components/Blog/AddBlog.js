@@ -32,7 +32,7 @@ class AddBlog extends Component{
     render(){
         return(
             <div className="addBlog">
-                <Header />
+                {/* <Header /> */}
                 <div className="clearfix">
                     <LeftNav />
                     <div className="addBlog-content">

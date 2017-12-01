@@ -4,14 +4,16 @@
     left:0;
     width: 250px;
     padding-top: 28px;
-    background-color: #f6f6f6;
-    margin-top: 50px;
+    /* background-color: #f6f6f6; */
+    /* margin-top: 50px; */
     overflow: hidden;
-    min-height: calc(100vh - 50px);
+    min-height: 100vh;
+    background: url(https://raw.githubusercontent.com/MrQingchun/lpy-nodejs/master/public/img/bg2.jpg);
+
 }
-.side > li > a:focus, .side > li > a:hover {
+/* .side > li > a:focus, .side > li > a:hover {
     background-color: rgba(255, 255, 255, 0.4);
-}
+} */
 .navbar-collapse{
     padding: 0;
 }
@@ -20,7 +22,7 @@
     text-align: center;
 }
 .sidebar ul li a {
-    color: #999;
+    color: #333;
     font-size: 16px;
     border-left: solid transparent;
 }

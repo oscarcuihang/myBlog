@@ -69,11 +69,11 @@ class UpdateBlog extends Component{
     render(){
         return(
             <div className="updateBlog">
-                <Header />
+                {/* <Header /> */}
                 <div className="clearfix">
                     <LeftNav />
                     <div className="addBlog-content">
-                        <h2>创建文章</h2>
+                        <h2>编辑文章</h2>
                         <p>
                             <lable>标题</lable>
                             <input type="text" className="title form-control" onChange={this.handleChange}  value={this.state.title} />
