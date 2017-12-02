@@ -19,7 +19,7 @@ class Login extends Component{
     loginSubmit(){
         // console.log($('#userName').val());
         $.ajax({
-            url: '/about',
+            url: '/user',
             type: 'post',
             dataType: 'json',
             data: {
@@ -31,9 +31,9 @@ class Login extends Component{
                
                 if(data.status == 1){
                     window.location = '/be/#/blog';
-                    this.setState({
-                        logined: true
-                    });
+                    // this.setState({
+                    //     logined: true
+                    // });
                 }
             },
             error: ()=>{

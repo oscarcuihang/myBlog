@@ -19116,9 +19116,9 @@ var _reactDom = __webpack_require__(12);
 
 var _reactRouter = __webpack_require__(27);
 
-__webpack_require__(546);
+__webpack_require__(547);
 
-var _logo = __webpack_require__(548);
+var _logo = __webpack_require__(549);
 
 var _logo2 = _interopRequireDefault(_logo);
 
@@ -23612,7 +23612,7 @@ var _reactDom = __webpack_require__(12);
 
 var _reactRouter = __webpack_require__(27);
 
-__webpack_require__(544);
+__webpack_require__(545);
 
 var _Header = __webpack_require__(85);
 
@@ -23671,7 +23671,16 @@ var LeftNav = function (_Component) {
                             _react2.default.createElement(
                                 _reactRouter.Link,
                                 { to: '/about', 'data-toggle': 'tab' },
-                                'About'
+                                '\u6211\u7684\u7B80\u4ECB'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'user-tab' },
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { to: '/user', 'data-toggle': 'tab' },
+                                '\u4E2A\u4EBA\u4FE1\u606F'
                             )
                         )
                     )
@@ -38795,7 +38804,7 @@ module.exports = function (css) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(549);
+var content = __webpack_require__(550);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -39084,23 +39093,27 @@ var _Login = __webpack_require__(540);
 
 var _Login2 = _interopRequireDefault(_Login);
 
-var _Blog = __webpack_require__(543);
+var _Blog = __webpack_require__(544);
 
 var _Blog2 = _interopRequireDefault(_Blog);
 
-var _AddBlog = __webpack_require__(550);
+var _AddBlog = __webpack_require__(551);
 
 var _AddBlog2 = _interopRequireDefault(_AddBlog);
 
-var _EditBlog = __webpack_require__(551);
+var _EditBlog = __webpack_require__(552);
 
 var _EditBlog2 = _interopRequireDefault(_EditBlog);
 
-var _About = __webpack_require__(553);
+var _About = __webpack_require__(554);
 
 var _About2 = _interopRequireDefault(_About);
 
-var _UpdateBlog = __webpack_require__(556);
+var _User = __webpack_require__(560);
+
+var _User2 = _interopRequireDefault(_User);
+
+var _UpdateBlog = __webpack_require__(557);
 
 var _UpdateBlog2 = _interopRequireDefault(_UpdateBlog);
 
@@ -39115,6 +39128,7 @@ _react2.default.createElement(
     _react2.default.createElement(_reactRouter.Route, { path: '/blog', component: _AddBlog2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/edit', component: _EditBlog2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/user', component: _User2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/edit/:id', component: _UpdateBlog2.default })
 ), document.getElementById('root'));
 
@@ -39214,7 +39228,7 @@ var _reactRouter = __webpack_require__(27);
 
 __webpack_require__(541);
 
-var _avatar = __webpack_require__(559);
+var _avatar = __webpack_require__(543);
 
 var _avatar2 = _interopRequireDefault(_avatar);
 
@@ -39244,11 +39258,9 @@ var Login = function (_Component) {
     _createClass(Login, [{
         key: 'loginSubmit',
         value: function loginSubmit() {
-            var _this2 = this;
-
             // console.log($('#userName').val());
             _jquery2.default.ajax({
-                url: '/about',
+                url: '/user',
                 type: 'post',
                 dataType: 'json',
                 data: {
@@ -39260,9 +39272,9 @@ var Login = function (_Component) {
 
                     if (data.status == 1) {
                         window.location = '/be/#/blog';
-                        _this2.setState({
-                            logined: true
-                        });
+                        // this.setState({
+                        //     logined: true
+                        // });
                     }
                 },
                 error: function error() {
@@ -39367,6 +39379,12 @@ exports.push([module.i, ".login{\r\n    width: 100%;\r\n    height: 100vh;\r\n  
 /* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "../images/6d9627d4.avatar.jpg";
+
+/***/ }),
+/* 544 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -39441,13 +39459,13 @@ var Blog = function (_Component) {
 exports.default = Blog;
 
 /***/ }),
-/* 544 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(545);
+var content = __webpack_require__(546);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -39472,7 +39490,7 @@ if(false) {
 }
 
 /***/ }),
-/* 545 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)(undefined);
@@ -39486,13 +39504,13 @@ exports.push([module.i, ".sidebar{\r\n    float: left;\r\n    position: fixed;\r
 
 
 /***/ }),
-/* 546 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(547);
+var content = __webpack_require__(548);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -39517,7 +39535,7 @@ if(false) {
 }
 
 /***/ }),
-/* 547 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)(undefined);
@@ -39531,13 +39549,13 @@ exports.push([module.i, "/* .header{\r\n    background-color: #aaa;\r\n    heigh
 
 
 /***/ }),
-/* 548 */
+/* 549 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAADACAYAAAA+2j4CAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEOUJCNzdGQjdDQkExMUU1QUIwQUE1OUQyODQ5ODMxQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEOUJCNzdGQzdDQkExMUU1QUIwQUE1OUQyODQ5ODMxQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ5QkI3N0Y5N0NCQTExRTVBQjBBQTU5RDI4NDk4MzFBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ5QkI3N0ZBN0NCQTExRTVBQjBBQTU5RDI4NDk4MzFBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3+4GMAAACQBJREFUeNrs3fFR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"
 
 /***/ }),
-/* 549 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)(undefined);
@@ -39545,13 +39563,13 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".blogContent, .addBlog-content{\r\n    float: left;\r\n    /* margin-top: 50px; */\r\n    padding: 15px 15px 0px 30px; \r\n    min-height: 100vh;\r\n    width: 70%; \r\n    margin-left: 250px;\r\n}\r\n.addBlog-content p{\r\n    margin-top: 30px;\r\n}\r\n.editBlogItem{\r\n    cursor: pointer;\r\n    text-align: left;\r\n    width: 100%;\r\n    height: 100px;\r\n    background-color: #fff;\r\n    border:1px solid #f1f1f1;\r\n     margin: 30px; \r\n    padding-left: 20px;\r\n}\r\n.setting{\r\n    float: right;\r\n    margin-right: 20px;\r\n    margin-top: -40px;\r\n}", ""]);
+exports.push([module.i, ".blogContent, .addBlog-content{\r\n    float: left;\r\n    /* margin-top: 50px; */\r\n    padding: 15px 15px 0px 30px; \r\n    min-height: 100vh;\r\n    width: 70%; \r\n    margin-left: 250px;\r\n}\r\n.addBlog-content p{\r\n    margin-top: 30px;\r\n}\r\n.editBlogItem{\r\n    cursor: pointer;\r\n    text-align: left;\r\n    width: 100%;\r\n    height: 100px;\r\n    background-color: #fff;\r\n    border:1px solid #f1f1f1;\r\n    margin: 30px; \r\n    padding-left: 20px;\r\n}\r\n.setting{\r\n    float: right;\r\n    margin-right: 20px;\r\n    margin-top: -40px;\r\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 550 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39680,7 +39698,7 @@ var AddBlog = function (_Component) {
 exports.default = AddBlog;
 
 /***/ }),
-/* 551 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39714,7 +39732,7 @@ var _Header = __webpack_require__(85);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _EditBlogItem = __webpack_require__(552);
+var _EditBlogItem = __webpack_require__(553);
 
 var _EditBlogItem2 = _interopRequireDefault(_EditBlogItem);
 
@@ -39787,7 +39805,7 @@ var EditBlog = function (_Component) {
 exports.default = EditBlog;
 
 /***/ }),
-/* 552 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39890,7 +39908,7 @@ var EditBlogItem = function (_Component) {
 exports.default = EditBlogItem;
 
 /***/ }),
-/* 553 */
+/* 554 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39908,6 +39926,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(12);
 
+var _jquery = __webpack_require__(28);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var _LeftNav = __webpack_require__(135);
 
 var _LeftNav2 = _interopRequireDefault(_LeftNav);
@@ -39916,9 +39938,11 @@ var _Header = __webpack_require__(85);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-__webpack_require__(554);
+__webpack_require__(555);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -39929,13 +39953,37 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var About = function (_Component) {
     _inherits(About, _Component);
 
-    function About() {
+    function About(props) {
         _classCallCheck(this, About);
 
-        return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this, props));
+
+        _this.handleInputChange = _this.handleInputChange.bind(_this);
+        return _this;
     }
 
     _createClass(About, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            _jquery2.default.ajax({
+                url: '/about',
+                type: 'get',
+                dataType: 'json',
+                success: function success(data) {
+                    console.log(data);
+                }
+            });
+        }
+    }, {
+        key: 'handleInputChange',
+        value: function handleInputChange(event) {
+            var target = event.target;
+            var value = target.type === 'checkbox' ? target.checked : target.value;
+            var name = target.name;
+
+            this.setState(_defineProperty({}, name, value));
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -39951,7 +39999,21 @@ var About = function (_Component) {
                         _react2.default.createElement(
                             'h1',
                             null,
-                            'About'
+                            '\u4E2A\u4EBA\u7B80\u4ECB'
+                        ),
+                        _react2.default.createElement(
+                            'form',
+                            { className: 'aboutForm' },
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                _react2.default.createElement(
+                                    'label',
+                                    null,
+                                    'bio:'
+                                ),
+                                _react2.default.createElement('textarea', { cols: '30', rows: '10', className: 'about-input form-control about-password', type: 'password' })
+                            )
                         )
                     )
                 )
@@ -39965,13 +40027,13 @@ var About = function (_Component) {
 exports.default = About;
 
 /***/ }),
-/* 554 */
+/* 555 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(555);
+var content = __webpack_require__(556);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -39996,7 +40058,7 @@ if(false) {
 }
 
 /***/ }),
-/* 555 */
+/* 556 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)(undefined);
@@ -40004,13 +40066,13 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".aboutContent{\r\n    float: left;\r\n    margin-top: 50px;\r\n    padding: 15px 15px 0px 30px;\r\n    min-height: calc(100vh - 50px);\r\n    width: calc(100% - 250px); \r\n}", ""]);
+exports.push([module.i, ".aboutContent{\r\n    float: left;\r\n    padding: 15px 15px 0px 30px;\r\n    min-height: 100vh;\r\n    width: 70%;\r\n    margin-left: 250px; \r\n}\r\n.aboutForm{\r\n    width: 70%;\r\n}\r\n.aboutForm p{\r\n    margin-top: 30px;\r\n}\r\n.aboutForm input{\r\n    display: inline-block;\r\n    width: 70%;\r\n    margin-left: 20px;\r\n}\r\n.aboutForm textarea{\r\n    width: 70%;\r\n    margin-left: 85px;\r\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 556 */
+/* 557 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40042,7 +40104,7 @@ var _LeftNav = __webpack_require__(135);
 
 var _LeftNav2 = _interopRequireDefault(_LeftNav);
 
-__webpack_require__(557);
+__webpack_require__(558);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40182,13 +40244,13 @@ var UpdateBlog = function (_Component) {
 exports.default = UpdateBlog;
 
 /***/ }),
-/* 557 */
+/* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(558);
+var content = __webpack_require__(559);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -40213,7 +40275,7 @@ if(false) {
 }
 
 /***/ }),
-/* 558 */
+/* 559 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(25)(undefined);
@@ -40227,10 +40289,240 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 559 */
+/* 560 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "../images/6d9627d4.avatar.jpg";
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(12);
+
+var _jquery = __webpack_require__(28);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _LeftNav = __webpack_require__(135);
+
+var _LeftNav2 = _interopRequireDefault(_LeftNav);
+
+var _Header = __webpack_require__(85);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+__webpack_require__(561);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var User = function (_Component) {
+    _inherits(User, _Component);
+
+    function User(props) {
+        _classCallCheck(this, User);
+
+        var _this = _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).call(this, props));
+
+        _this.state = {
+            avatar: '',
+            name: '',
+            password: '',
+            introduce: ''
+        };
+        _this.handleInputChange = _this.handleInputChange.bind(_this);
+        _this.userSubmit = _this.userSubmit.bind(_this);
+        return _this;
+    }
+
+    _createClass(User, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            _jquery2.default.ajax({
+                url: '/user',
+                type: 'get',
+                dataType: 'json',
+                success: function success(data) {
+                    console.log(data.data);
+                    var userData = data.data[0];
+                    _this2.setState({
+                        avatar: userData.avatar,
+                        name: userData.name,
+                        password: userData.password,
+                        introduce: userData.introduce
+                    });
+                }
+            });
+        }
+    }, {
+        key: 'handleInputChange',
+        value: function handleInputChange(event) {
+            var target = event.target;
+            var value = target.type === 'checkbox' ? target.checked : target.value;
+            var name = target.name;
+
+            this.setState(_defineProperty({}, name, value));
+        }
+    }, {
+        key: 'userSubmit',
+        value: function userSubmit() {
+            var formData = new FormData((0, _jquery2.default)('#userForm')[0]);
+            _jquery2.default.ajax({
+                url: '/user/edit',
+                type: 'post',
+                data: formData,
+                processData: false, // 避开jQuery对formdata的默认处理
+                contentType: false, //自动加上正确的contentType
+                success: function success(data) {
+                    console.log(data);
+                    alert(data.message);
+                    location.reload();
+                },
+                error: function error() {
+                    console.log("请求失败");
+                }
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'user' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'clearfix' },
+                    _react2.default.createElement(_LeftNav2.default, null),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'userContent' },
+                        _react2.default.createElement(
+                            'h1',
+                            null,
+                            '\u4E2A\u4EBA\u4FE1\u606F\u4FEE\u6539'
+                        ),
+                        _react2.default.createElement(
+                            'form',
+                            { className: 'userForm', id: 'userForm', encType: 'multipart/form-data' },
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                _react2.default.createElement(
+                                    'label',
+                                    null,
+                                    'avatar:'
+                                ),
+                                _react2.default.createElement('img', { src: this.state.avatar, className: 'userAvatar' }),
+                                _react2.default.createElement('input', { className: 'user-input field user-avatar', type: 'file', name: 'avatar', onChange: this.handleInputChange })
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                _react2.default.createElement(
+                                    'label',
+                                    null,
+                                    'userName:'
+                                ),
+                                _react2.default.createElement('input', { className: 'user-input field form-control user-userName', type: 'text', name: 'name', value: this.state.name, onChange: this.handleInputChange })
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                _react2.default.createElement(
+                                    'label',
+                                    null,
+                                    'password:'
+                                ),
+                                _react2.default.createElement('input', { className: 'user-input field form-control user-password', type: 'password', name: 'password', value: this.state.password, onChange: this.handleInputChange })
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                _react2.default.createElement(
+                                    'label',
+                                    null,
+                                    'introduce:'
+                                ),
+                                _react2.default.createElement('input', { className: 'user-input field form-control user-introduce', type: 'text', name: 'introduce', value: this.state.introduce, onChange: this.handleInputChange })
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                _react2.default.createElement('input', { type: 'button', className: 'btn user-btn', value: '\u4FDD\u5B58\u4FEE\u6539', onClick: this.userSubmit })
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return User;
+}(_react.Component);
+
+exports.default = User;
+
+/***/ }),
+/* 561 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(562);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(26)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../../node_modules/_css-loader@0.28.7@css-loader/index.js!./User.css", function() {
+			var newContent = require("!!../../../../../node_modules/_css-loader@0.28.7@css-loader/index.js!./User.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 562 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(25)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".userContent{\r\n    float: left;\r\n    padding: 15px 15px 0px 30px;\r\n    min-height: 100vh;\r\n    width: 70%;\r\n    margin-left: 250px; \r\n}\r\n.userForm{\r\n    width: 70%;\r\n}\r\n.userForm p{\r\n    margin-top: 30px;\r\n}\r\n.userForm input{\r\n    display: inline-block;\r\n    width: 70%;\r\n    margin-left: 20px;\r\n}\r\n.userForm textarea{\r\n    width: 70%;\r\n    margin-left: 85px;\r\n}\r\n.userForm .user-btn{\r\n    margin: 0;\r\n    width: 15%;\r\n}\r\n.userAvatar{\r\n    width: 100px;\r\n    height: 100px;\r\n    margin-left: 50px;\r\n}", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);

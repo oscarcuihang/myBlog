@@ -24,7 +24,12 @@ class LeftNav extends Component{
                             </li>
                             <li className="about-tab">
                                 <Link to="/about" data-toggle="tab">
-                                    About
+                                    我的简介
+                                </Link>
+                            </li>
+                            <li className="user-tab">
+                                <Link to="/user" data-toggle="tab">
+                                    个人信息
                                 </Link>
                             </li>
                         </ul>

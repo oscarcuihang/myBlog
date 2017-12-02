@@ -9,35 +9,21 @@ var moment = require('moment');
 
 //请求个人信息
 router.get('/',(req,res,next)=>{
-
+    users.find({},(err,resData)=>{
+        if(err){
+            res.json({
+                'status':0,
+                'message':'获取失败'
+            })
+        }else{
+            res.json({
+                'status':1,
+                'message':'获取成功',
+                'data':resData
+            })
+        }
+    })
 })
 
-//登录
-router.post('/',(req,res,next)=>{
-    var userName = req.body.userName;
-    var password = req.body.password;
-    // console.log(users);
-    var query = {name:userName,password:password};
-        users.count(query,(err,resData)=>{
-            if(err){
-                res.json({
-                    'status':0,
-                    'message':'登录失败'
-                })
-            }else{
-                if(resData == 1){
-                    res.json({
-                        'status':1,
-                        'message':'登录成功'
-                    })
-                }else{
-                    res.json({
-                        'status':0,
-                        'message':'用户名或密码错误'
-                    })
-                }
-            }
-        })
-})
 
 module.exports = router;

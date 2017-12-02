@@ -9,6 +9,7 @@ var marked = require('marked');
 var markdown = require('markdown').markdown;
 
 var index = require('./server/routes/index');
+var user = require('./server/routes/users');
 var about = require('./server/routes/about');
 var blog = require('./server/routes/blog');
 var comment = require('./server/routes/comment');
@@ -29,10 +30,15 @@ app.use(cookieParser());
 app.use('/',express.static(path.join(__dirname, '/client/static')));
 app.use('/fe',express.static(path.join(__dirname, '/client/static/fe')));
 app.use('/be',express.static(path.join(__dirname, '/client/static/be')));
+app.use(require('express-formidable')({
+  uploadDir: path.join(__dirname,'/client/static/be/img'), //上传目录
+  keepExtensions: true// 保留后缀
+}))
 
 // app.get('/',function(req,res){
 //     res.render('index.html');
 // });
+app.use('/user',user);
 app.use('/about',about);
 app.use('/blog',blog);
 app.use('/comment',comment);
