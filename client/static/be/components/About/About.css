@@ -11,12 +11,7 @@
 .aboutForm p{
     margin-top: 30px;
 }
-.aboutForm input{
-    display: inline-block;
-    width: 70%;
-    margin-left: 20px;
-}
 .aboutForm textarea{
-    width: 70%;
-    margin-left: 85px;
+    width: 100%;
+    /* margin-left: 85px; */
 }

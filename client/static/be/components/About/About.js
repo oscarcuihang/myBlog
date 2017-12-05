@@ -9,21 +9,29 @@ class About extends Component{
 
     constructor(props){
         super(props);
-        this.handleInputChange = this.handleInputChange.bind(this);
+        this.state = {
+            bio: ''
+        };
+        this.handleTextChange = this.handleTextChange.bind(this);
+        this.TextSubmit = this.TextSubmit.bind(this);
     }
 
     componentDidMount(){
         $.ajax({
-            url: '/about',
+            url: '/about/markdown',
             type: 'get',
             dataType: 'json',
             success: (data)=>{
                 console.log(data);
+                var textData = data.data;
+                this.setState({
+                    bio: textData.bio
+                })
             }
         })
     }
 
-    handleInputChange(event){
+    handleTextChange(event){
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -31,6 +39,21 @@ class About extends Component{
         this.setState({
             [name] : value
         });
+    }
+
+    TextSubmit(){
+        let bio = $('.about-text').val();
+        $.ajax({
+            url: '/about',
+            type: 'post',
+            data:{
+                bio: bio
+            },
+            success: (data)=>{
+                alert(data.message);
+                location.reload();
+            }
+        })
     }
 
     render(){
@@ -43,8 +66,11 @@ class About extends Component{
                         <h1>个人简介</h1>
                         <form className="aboutForm">
                             <p>
-                                <label>bio:</label>
-                                <textarea cols="30" rows="10" className="about-input form-control about-password" type="password" />
+                                {/* <label>bio:</label> */}
+                                <textarea cols="45" rows="25" className="about-input form-control about-text" name="bio" type="password" onChange={this.handleTextChange} value={this.state.bio} />
+                            </p>
+                            <p>
+                                <input type="button" value="提交" className="btn" onClick={this.TextSubmit} />
                             </p>
                         </form>
                     </div> 

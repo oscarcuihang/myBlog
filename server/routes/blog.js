@@ -58,7 +58,7 @@ router.get('/markdown/:id',(req,res,next)=>{
         }else{
             res.json({
                 'status':1,
-                'message':'获取文章成功111',
+                'message':'获取文章成功',
                 'data':resData
             })
         }

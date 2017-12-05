@@ -1,11 +1,34 @@
 import React,{Component} from 'react';
 import {render} from 'react-dom';
 import {Link} from 'react-router';
+import $ from 'jquery';
 import Header from '../Header/Header.js';
 import './Home.css';
 import Bg from '../../assets/images/avatar.jpg'
 
 class Home extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            avatar: ''
+        };
+    }
+
+    componentDidMount(){
+        $.ajax({
+            url: '/user',
+            type: 'get',
+            success: (data)=>{
+                if(data.status == 1){
+                    let userData = data.data[0];
+                    this.setState({
+                        avatar: userData.avatar
+                    })
+                }
+            }
+        })
+    }
 
     render(){
         return(
@@ -31,7 +54,7 @@ class Home extends Component{
                 </div> */}
                 <div className="homeContent">
                     <p className="avatar">
-                        <img src={Bg} />
+                        <img src={this.state.avatar} />
                     </p>
                     <div className="homeNav">
                         <span><Link to="/blog">Blog</Link></span>

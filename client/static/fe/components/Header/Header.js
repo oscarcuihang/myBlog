@@ -1,11 +1,37 @@
 import React,{Component} from 'react';
 import {render} from 'react-dom';
 import {Link} from 'react-router';
+import $ from 'jquery';
 import './Header.css';
 import Logo from '../../assets/images/logo.png';
 import BlogAvatar from '../../assets/images/avatar.jpg';
 
 class Header extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            avatar: '',
+            authorName: '',
+            authorResume: ''
+        };
+    }
+
+    componentDidMount(){
+        $.ajax({
+            url: '/user',
+            type: 'get',
+            dataType: 'json',
+            success: (data)=>{
+                let userData = data.data[0]
+                this.setState({
+                    avatar: userData.avatar,
+                    authorName: userData.name,
+                    authorResume: userData.introduce
+                })
+            }
+        })
+    }
 
     render(){
         return (
@@ -17,9 +43,9 @@ class Header extends Component{
                     <a href="https://github.com/wlfsmile" className="myGit">github</a>
                 </nav>
                  <div className="resume-title">
-                    <img src={BlogAvatar} className="BlogAvatar" />
-                    <p className="authorName">wlfsmile</p>
-                    <p className="authorResume">Front-End Engineer</p>
+                    <img src={this.state.avatar} className="BlogAvatar" />
+                    <p className="authorName">{this.state.authorName}</p>
+                    <p className="authorResume">{this.state.authorResume}</p>
                 </div> 
                 {/* <div className="for-sticky">
                     <div className="col-md-2 col-xs-6 logo">
