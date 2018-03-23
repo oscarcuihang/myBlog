@@ -29,7 +29,7 @@
     cd myBlog
     npm i或者(cnpm,下同)
 ```
-+ 全局安装webpack
++ 全局安装webpack + webpack-cli
 ```
     npm i -g webpack
 ```
